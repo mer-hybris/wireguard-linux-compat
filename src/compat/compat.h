@@ -741,6 +741,7 @@ static inline void cpu_to_le32_array(u32 *buf, unsigned int words)
 }
 #endif
 
+/*
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 14, 0)
 #include <crypto/algapi.h>
 static inline void crypto_xor_cpy(u8 *dst, const u8 *src1, const u8 *src2,
@@ -768,6 +769,7 @@ static inline void crypto_xor_cpy(u8 *dst, const u8 *src1, const u8 *src2,
 	}
 }
 #endif
+*/
 
 #if LINUX_VERSION_CODE < KERNEL_VERSION(3, 17, 0)
 #define read_cpuid_part() read_cpuid_part_number()
@@ -777,9 +779,11 @@ static inline void crypto_xor_cpy(u8 *dst, const u8 *src1, const u8 *src2,
 #define hlist_add_behind(a, b) hlist_add_after(b, a)
 #endif
 
+/*
 #if LINUX_VERSION_CODE < KERNEL_VERSION(5, 0, 0) && !defined(ISRHEL8)
 #define totalram_pages() totalram_pages
 #endif
+*/
 
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 18, 0)
 struct __kernel_timespec {
